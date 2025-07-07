@@ -1,0 +1,112 @@
+1
+00:00:00,000 --> 00:00:02,560
+In this video, I'll show you how to read from a file in Python.
+
+2
+00:00:02,560 --> 00:00:04,160
+The first thing we need to do is open the file.
+
+3
+00:00:04,160 --> 00:00:05,320
+You're going to say, file equals open.
+
+4
+00:00:05,320 --> 00:00:06,960
+My file is called file.txt.
+
+5
+00:00:06,960 --> 00:00:08,160
+So I put that right there.
+
+6
+00:00:08,160 --> 00:00:10,440
+And then I put R as the mode that I want to open this file
+
+7
+00:00:10,440 --> 00:00:11,800
+in that stands for read.
+
+8
+00:00:11,800 --> 00:00:14,440
+Now, if your file is done the same directory as your Python file,
+
+9
+00:00:14,440 --> 00:00:17,400
+then you need to put in the absolute path to this file.
+
+10
+00:00:17,400 --> 00:00:21,000
+So C, colon slash slash, et cetera, whatever the path is to it.
+
+11
+00:00:21,000 --> 00:00:23,720
+If it's in the same directory, you can just put the name of the file.
+
+12
+00:00:23,720 --> 00:00:26,600
+Now, to actually read from the file, what you do is the following, print,
+
+13
+00:00:26,600 --> 00:00:28,720
+and then file.readlines like that.
+
+14
+00:00:28,720 --> 00:00:31,920
+For readlines, we'll give you a list containing all of the lines in the file.
+
+15
+00:00:31,920 --> 00:00:33,720
+Once you're done with the file, you need to make sure you close it.
+
+16
+00:00:33,720 --> 00:00:34,720
+So file.close.
+
+17
+00:00:34,720 --> 00:00:37,640
+When I run this, notice we get all of the lines inside of the file.
+
+18
+00:00:37,640 --> 00:00:38,840
+We just read the file.
+
+19
+00:00:38,840 --> 00:00:40,520
+Another way to do this is simply with read.
+
+20
+00:00:40,520 --> 00:00:43,840
+If you use .read, notice you're going to get a string that contains all of the text
+
+21
+00:00:43,840 --> 00:00:46,280
+in the file, but not based on its lines.
+
+22
+00:00:46,280 --> 00:00:49,680
+Finally, a quick way that you can do this as well that avoids you having to close it.
+
+23
+00:00:49,680 --> 00:00:54,240
+So say with open file as file like that, then you can read the file inside of here.
+
+24
+00:00:54,240 --> 00:00:55,680
+Now, you no longer need to close it.
+
+25
+00:00:55,680 --> 00:00:56,680
+Let's run the code.
+
+26
+00:00:56,680 --> 00:00:57,680
+Notice everything works.
+
+27
+00:00:57,680 --> 00:00:58,680
+Hopefully you found this helpful.
+
+28
+00:00:58,680 --> 00:01:00,000
+If you did, follow for more.
+
