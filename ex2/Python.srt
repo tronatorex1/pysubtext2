@@ -1,0 +1,352 @@
+1
+00:00:00,000 --> 00:00:04,600
+Hello and welcome to another tutorial from Moe City.
+
+2
+00:00:04,600 --> 00:00:10,680
+In this one I'm going to demonstrate how to generate automated subtitles for any videos
+
+3
+00:00:10,680 --> 00:00:13,400
+you want using Python.
+
+4
+00:00:13,400 --> 00:00:18,000
+To get started on this one first you will need to install this pip package called OpenAI
+
+5
+00:00:18,000 --> 00:00:19,000
+Whisper.
+
+6
+00:00:19,000 --> 00:00:24,520
+So this package allows us to create a transcription, English transcription for any video.
+
+7
+00:00:24,520 --> 00:00:27,600
+You can also use it to translate the language as well.
+
+8
+00:00:27,800 --> 00:00:31,600
+If you have a video that's in a different language and you want to create or generate
+
+9
+00:00:31,600 --> 00:00:34,600
+subtitles in English, you can also do that.
+
+10
+00:00:34,600 --> 00:00:42,100
+So this is the pip package website and you can pretty much scroll down and see exactly
+
+11
+00:00:42,100 --> 00:00:47,100
+how everything is laid out, what kind of dependencies do you need.
+
+12
+00:00:47,100 --> 00:00:51,600
+You might also need the package called FFMPEG.
+
+13
+00:00:51,600 --> 00:00:57,320
+And that's also required to read the video files or if you want to display the video
+
+14
+00:00:57,320 --> 00:01:01,680
+and audio files as well.
+
+15
+00:01:01,680 --> 00:01:06,320
+They do support a large array of different languages.
+
+16
+00:01:06,320 --> 00:01:11,760
+You can take a look at how well kind of stuff they actually support and using the package
+
+17
+00:01:11,760 --> 00:01:13,280
+is actually quite easy.
+
+18
+00:01:13,280 --> 00:01:19,320
+Let me just show you the code that I've been using to generate subtitles for my videos.
+
+19
+00:01:19,320 --> 00:01:22,080
+At the moment this is literally the code that I'm using.
+
+20
+00:01:22,080 --> 00:01:30,080
+So I'm using the first I'm just importing Whisper, Whisper utilities, import the get writer
+
+21
+00:01:30,080 --> 00:01:34,080
+function, then load the model I'm using the base model here.
+
+22
+00:01:34,080 --> 00:01:39,240
+If you go to the website you can see the different models that they use.
+
+23
+00:01:39,240 --> 00:01:43,320
+So you have base, I need base small medium large.
+
+24
+00:01:43,320 --> 00:01:47,760
+I'm using the base one because I had some of the videos that were quite long.
+
+25
+00:01:47,760 --> 00:01:54,040
+So I want to make sure that I get as accurate subtitle as possible.
+
+26
+00:01:54,040 --> 00:01:57,800
+For the audio file I'm simply passing in them before file that I have and I'll play
+
+27
+00:01:57,800 --> 00:02:00,440
+that for you in a minute.
+
+28
+00:02:00,440 --> 00:02:07,520
+For the result I'm basically saving the transcription of the audio file and I'm disabling the FFP16.
+
+29
+00:02:07,520 --> 00:02:10,080
+So my CPU doesn't support FFP16.
+
+30
+00:02:10,080 --> 00:02:16,560
+So I'm just disabling that so it runs the FP32 mode instead.
+
+31
+00:02:16,560 --> 00:02:20,120
+And then on the setting up the output directory here.
+
+32
+00:02:20,120 --> 00:02:25,000
+Now I need to save the files as a BTT file because that was one of the requirements for
+
+33
+00:02:25,000 --> 00:02:28,080
+you to me when I released my new course on there.
+
+34
+00:02:28,080 --> 00:02:34,320
+The didn't accept SRT files but if you need to say generate SRT files for your videos
+
+35
+00:02:34,320 --> 00:02:40,200
+you can also just change the BTT to SRT and it will generate SRT files as well.
+
+36
+00:02:40,200 --> 00:02:43,960
+Okay, so let's stick to the BTT one for now.
+
+37
+00:02:43,960 --> 00:02:48,920
+So it's just basically running the get writer function file type and the output directory.
+
+38
+00:02:48,920 --> 00:02:53,480
+Okay, basically we're just running this to transfer up the audio file and save the results.
+
+39
+00:02:53,480 --> 00:02:56,840
+Okay, so before we run this one let me just show you the video.
+
+40
+00:02:56,840 --> 00:03:02,920
+So this video is from my quiz maker app development course that I've recently released
+
+41
+00:03:02,920 --> 00:03:03,920
+on due to me.
+
+42
+00:03:03,920 --> 00:03:06,840
+So if I just play this one this is the assignment video I believe.
+
+43
+00:03:06,840 --> 00:03:08,800
+Hello and an application.
+
+44
+00:03:08,800 --> 00:03:12,520
+So right now the one saved on the computer.
+
+45
+00:03:12,520 --> 00:03:16,720
+So this is on when it's designed to challenge you in a way where you can take an existing
+
+46
+00:03:16,720 --> 00:03:22,240
+program and add four functionalities to the program to enhance its usability in the
+
+47
+00:03:22,240 --> 00:03:23,240
+long run.
+
+48
+00:03:23,240 --> 00:03:24,240
+Let me just show you guys.
+
+49
+00:03:24,240 --> 00:03:27,000
+As you can see there's no subtitles on the video currently.
+
+50
+00:03:27,000 --> 00:03:33,000
+So I just need to add a subtitle so I can add more accessibility to the course.
+
+51
+00:03:33,000 --> 00:03:39,760
+So I just need to do here right now is I'm just going to run this one.
+
+52
+00:03:39,760 --> 00:03:47,320
+As run depending on the size of the video your the time is going to take to transcribe
+
+53
+00:03:47,320 --> 00:03:52,400
+the entire project might take a while but this is only a three minute video so you shouldn't
+
+54
+00:03:52,400 --> 00:03:55,400
+take that long.
+
+55
+00:03:55,400 --> 00:03:59,400
+Right now the subtitle has been generated as you can see there's a dot VTT file on here.
+
+56
+00:03:59,400 --> 00:04:01,320
+So if I click on that.
+
+57
+00:04:01,320 --> 00:04:07,760
+You can see that he has transcribed or transcribe the whole video with the timestamps on
+
+58
+00:04:07,760 --> 00:04:09,120
+it.
+
+59
+00:04:09,120 --> 00:04:15,080
+And now mind you the transcription for the videos are not 100% all the time so you might
+
+60
+00:04:15,080 --> 00:04:16,800
+still need to edit the files a little bit.
+
+61
+00:04:16,800 --> 00:04:21,680
+I find it a lot easier to simply edit the files rather than generating the files myself.
+
+62
+00:04:21,680 --> 00:04:29,680
+Okay so let's play the video again and let's see the results of the subtitle.
+
+63
+00:04:29,680 --> 00:04:32,240
+Hello and welcome to this assignment.
+
+64
+00:04:32,240 --> 00:04:35,680
+So one of the issues you can see here is it's hello and welcome to this assignment.
+
+65
+00:04:35,680 --> 00:04:37,640
+This is all instead of four.
+
+66
+00:04:37,640 --> 00:04:38,640
+Right.
+
+67
+00:04:38,640 --> 00:04:43,600
+So I'm going to use the minor four uses which make our app development course which is
+
+68
+00:04:43,600 --> 00:04:44,600
+given.
+
+69
+00:04:44,600 --> 00:04:48,880
+And I click apply it gets applied to the image here.
+
+70
+00:04:48,880 --> 00:04:54,040
+Okay so imagine I want to use this image here to the quiz right now.
+
+71
+00:04:54,040 --> 00:04:57,960
+So I have the link for the image right there.
+
+72
+00:04:57,960 --> 00:04:59,960
+Okay.
+
+73
+00:04:59,960 --> 00:05:03,320
+And then I want to add that to the program.
+
+74
+00:05:04,320 --> 00:05:05,920
+I'll go to add image.
+
+75
+00:05:05,920 --> 00:05:11,280
+I can paste the link into the text box here and click apply.
+
+76
+00:05:11,280 --> 00:05:12,280
+Right.
+
+77
+00:05:12,280 --> 00:05:19,360
+And if I save this quiz with a random question which is going to create and check the quiz
+
+78
+00:05:19,360 --> 00:05:21,360
+here.
+
+79
+00:05:21,360 --> 00:05:29,040
+You can save onto my location as the images and files here are local.
+
+80
+00:05:29,040 --> 00:05:34,240
+This would enhance your own features and functions that apply to your own project.
+
+81
+00:05:34,240 --> 00:05:35,240
+Okay.
+
+82
+00:05:35,240 --> 00:05:38,120
+I think the subtitle results are really good.
+
+83
+00:05:38,120 --> 00:05:46,120
+And with this small minor tweaks I can pretty much use this subtitle file for my video.
+
+84
+00:05:46,120 --> 00:05:50,320
+So I really hope you found this one useful and you can generate your own subtitle for
+
+85
+00:05:50,320 --> 00:05:54,000
+your videos and you know it helps you in some way.
+
+86
+00:05:54,000 --> 00:05:58,080
+The link to my new course is in the description here.
+
+87
+00:05:58,080 --> 00:06:02,120
+If you find this video helpful please leave a like and subscribe to the channel and I
+
+88
+00:06:02,120 --> 00:06:03,360
+will see you on the next one.
+
